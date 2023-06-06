@@ -1,0 +1,59 @@
+import random
+import time
+userc = 0
+compc = 0
+i = 1
+while(i <= 5):
+    print("*****ROCK,PAPER OR SCISSORS*****")
+    n = int(input("Enter 1 for choosing ROCK\nEnter 2 for choosing PAPER\nEnter 3 for choosing SCISSORS\n"))
+    if n == 1:
+        print("YOU CHOSE : ROCK\n")
+    elif n == 2:
+        print("YOU CHOSE : PAPER\n")
+    elif n == 3:
+        print("YOU CHOSE : SCISSORS\n")
+    else:
+        print("Enter 1 for choosing ROCK\nEnter 2 for choosing PAPER\nEnter 3 for choosing SCISSORS\n")
+
+    r = random.randint(1, 4)
+    if r == 1:
+        print("COMPUTER CHOSE : ROCK\n")
+    elif r == 2:
+        print("COMPUTER CHOSE : PAPER\n")
+    elif r == 3:
+        print("COMPUTER CHOSE : SCISSORS\n")
+
+    if n == r:
+        print("ITS A DRAW!")
+    elif n == 1 and r == 2:
+        print("COMPUTER WON!")
+        compc +=1
+    elif n == 1 and r == 3:
+        print("YOU WON!")
+        userc +=1
+    elif n == 2 and r == 1:
+        print("YOU WON!")
+        userc +=1
+    elif n == 2 and r == 3:
+        print("COMPUTER WON!")
+        compc +=1
+    elif n == 3 and r == 1:
+        print("COMPUTER WON!")
+        compc +=1
+    elif n == 3 and r == 2:
+        print("YOU WON!")
+        userc +=1
+    print("Number of trials left:",(5-i))
+    i=i+1
+
+print("Total rounds won by You:",userc)
+print("Total rounds won by Computer:",compc)
+if(userc>compc):
+    print("YOU ARE THE ULTIMATE WINNER!!!")
+if(compc>userc):
+    print("THE COMPUTER IS THE ULTIMATE WINNER!!!")
+if(compc==userc):
+    print("ITS A DRAW!!!")
+
+localtime=time.asctime(time.localtime(time.time()))
+print(localtime)
